@@ -23,19 +23,30 @@ func _ready():
 
 func _process(delta):
 	_recording()
+	_force_clone()
 
 func _recording():
 	positionList.append(player.position)
 
-func _on_Timer_timeout():
-	_add_clone()
-	positionList = [] #NICE
+func _reset():
+	positionList = []
 	playerInitialPos = Vector2(playerInitialPos.x, playerInitialPos.y - 40)
 	player.position = playerInitialPos
 	
 	if(currentLoop < totalLoops):
-		currentLoop += 1
 		loopTimer.start()
+	
+	currentLoop += 1
+
+func _on_Timer_timeout():
+	_add_clone()
+	_reset()
+
+func _force_clone():
+	if(Input.is_action_just_pressed("Clone") and currentLoop <= totalLoops):
+		loopTimer.stop()
+		_add_clone()
+		_reset()
 
 func _add_clone():
 	var cloneInstance = CLONE.instance()
