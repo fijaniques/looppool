@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Entities/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/TileMap/NormalTiles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/CloneSystem.gd" type="Script" id=3]
+
+[node name="Map1" type="Node2D"]
+script = ExtResource( 3 )
+totalLoops = 3
+loopTime = 3.0
+
+[node name="NormalTiles" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 1703957, 0, 0, 1703958, 0, 0, 1703959, 0, 0, 1703960, 0, 0, 1703961, 0, 0, 1703962, 0, 0, 1703963, 0, 0, 1703964, 0, 0, 1703965, 0, 0, 1703966, 0, 0, 1703967, 0, 0, 1703968, 0, 0, 1703969, 0, 0, 1769493, 0, 0, 1835008, 0, 0, 1835029, 0, 0, 1900544, 0, 0, 1900565, 0, 0, 1966080, 0, 0, 1966101, 0, 0, 2031616, 0, 0, 2031637, 0, 0, 2097152, 0, 0, 2097153, 0, 0, 2097154, 0, 0, 2097155, 0, 0, 2097156, 0, 0, 2097157, 0, 0, 2097158, 0, 0, 2097159, 0, 0, 2097160, 0, 0, 2097161, 0, 0, 2097162, 0, 0, 2097163, 0, 0, 2097164, 0, 0, 2097165, 0, 0, 2097166, 0, 0, 2097167, 0, 0, 2097168, 0, 0, 2097169, 0, 0, 2097170, 0, 0, 2097171, 0, 0, 2097172, 0, 0, 2097173, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 288, 928 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
