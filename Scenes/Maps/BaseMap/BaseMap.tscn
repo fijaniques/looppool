@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Entities/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/TileMap/NormalTiles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/CloneSystem.gd" type="Script" id=3]
+[ext_resource path="res://Entities/Portals/PortalIn/PortalIn.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Entities/Portals/PortalOut/PortalOut.tscn" type="PackedScene" id=5]
+
+[node name="BaseMap" type="Node2D"]
+script = ExtResource( 3 )
+totalLoops = 3
+loopTime = 3.0
+
+[node name="NormalTiles" parent="." instance=ExtResource( 2 )]
+
+[node name="Portals" type="Node2D" parent="."]
+
+[node name="PortalOut" parent="Portals" instance=ExtResource( 5 )]
+position = Vector2( 160, 960 )
+
+[node name="PortalIn" parent="Portals" instance=ExtResource( 4 )]
+position = Vector2( 256, 960 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 992 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -25,10 +25,10 @@ func _process(delta):
 	_recording()
 	_force_clone()
 
-func _recording():
-	positionList.append(player.position)
+func _recording(): #adding player position to list
+	positionList.append(player.position) 
 
-func _reset():
+func _reset(): #reseting position list and player position avoiding collision bug, increasing loop number
 	positionList = []
 	playerInitialPos = Vector2(playerInitialPos.x, playerInitialPos.y - 40)
 	player.position = playerInitialPos
@@ -38,19 +38,18 @@ func _reset():
 	
 	currentLoop += 1
 
-func _on_Timer_timeout():
+func _on_Timer_timeout(): #time untill reset
 	_add_clone()
 	_reset()
 
-func _force_clone():
+func _force_clone(): #reset before timer ends
 	if(Input.is_action_just_pressed("Clone") and currentLoop <= totalLoops):
 		loopTimer.stop()
 		_add_clone()
 		_reset()
 
-func _add_clone():
+func _add_clone(): #create clone instance, transfer position list, add clone to scene and change it`s position
 	var cloneInstance = CLONE.instance()
 	cloneInstance.positionList = positionList
 	add_child(cloneInstance)
-	cloneInstance.position.x = playerInitialPos.x
-	cloneInstance.position.y = playerInitialPos.y
+	cloneInstance.position = playerInitialPos
