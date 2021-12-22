@@ -29,7 +29,7 @@ func _recording():
 
 func _on_Timer_timeout():
 	_add_clone()
-	positionList = []
+	positionList = [] #NICE
 	playerInitialPos = Vector2(playerInitialPos.x, playerInitialPos.y - 40)
 	player.position = playerInitialPos
 	
