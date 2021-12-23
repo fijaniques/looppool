@@ -38,6 +38,7 @@ one_shot = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 320, 864 )
 current = true
+zoom = Vector2( 0.6, 0.6 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
