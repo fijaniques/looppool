@@ -17,7 +17,8 @@ var currentLoop : int = 0
 func _ready():
 	isRecording = true
 	loopTimer.wait_time = loopTime
-	loopTimer.start()
+	if(totalLoops > 0):
+		loopTimer.start()
 	currentLoop += 1
 	playerInitialPos = player.position
 	$CanvasLayer/RichTextLabel.bbcode_text = "THIS IS A TEXT TEST"
