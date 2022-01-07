@@ -22,4 +22,6 @@ margin_top = 800.0
 margin_right = 1952.0
 margin_bottom = 840.0
 rect_scale = Vector2( 2.9, 2.9 )
-text = "Press space if you don`t want to wait"
+visible_characters = 0
+percent_visible = 0.0
+text = "Press space if you don't want to wait"

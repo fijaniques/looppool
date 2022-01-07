@@ -29,4 +29,6 @@ margin_top = 832.0
 margin_right = 235.0
 margin_bottom = 872.0
 rect_scale = Vector2( 3, 3 )
+visible_characters = 0
+percent_visible = 0.0
 text = "Your clone repeats your actions. Use it!"
