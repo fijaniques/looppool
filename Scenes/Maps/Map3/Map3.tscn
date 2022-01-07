@@ -12,6 +12,7 @@ tile_data = PoolIntArray( 1245198, 0, 0, 1245199, 0, 0, 1245200, 0, 0, 1245201, 
 
 [node name="PortalOut" parent="Portals" index="0"]
 position = Vector2( 512, 704 )
+nextScene = "res://Scenes/Maps/Map4/Map4.tscn"
 
 [node name="PortalIn" parent="Portals" index="1"]
 position = Vector2( 64, 960 )
