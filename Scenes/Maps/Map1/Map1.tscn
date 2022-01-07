@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Maps/BaseMap/BaseMap.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Tutorial/Tutorial.tscn" type="PackedScene" id=2]
 
 [node name="Map1" instance=ExtResource( 1 )]
 totalLoops = 0
@@ -20,4 +21,12 @@ position = Vector2( 96, 1024 )
 
 [node name="Camera2D" parent="." index="4"]
 position = Vector2( 480, 928 )
-zoom = Vector2( 0.6, 0.6 )
+
+[node name="Tutorial" parent="." index="6" instance=ExtResource( 2 )]
+margin_left = 320.0
+margin_top = 800.0
+margin_right = 992.0
+margin_bottom = 1664.0
+rect_scale = Vector2( 3, 3 )
+visible_characters = 0
+percent_visible = 0.0

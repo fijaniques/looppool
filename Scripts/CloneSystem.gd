@@ -21,9 +21,10 @@ func _ready():
 		loopTimer.start()
 	currentLoop += 1
 	playerInitialPos = player.position
-	$CanvasLayer/RichTextLabel.bbcode_text = "THIS IS A TEXT TEST"
 
 func _process(delta):
+	if(Input.is_action_just_pressed("Reset")):
+		get_tree().reload_current_scene()
 	_recording()
 	_force_clone()
 	_text()
@@ -32,7 +33,7 @@ func _text():
 	$CanvasLayer/RichTextLabel.bbcode_text = "Loop " + str(currentLoop - 1) + "/" + str(totalLoops) + ": " + str("%1.2f" % $Timer.time_left)
 
 func _recording(): #adding player position to list
-	positionList.append(player.position) 
+	positionList.append(player.position)
 
 func _reset(): #reseting position list and player position avoiding collision bug, increasing loop number
 	positionList = []
