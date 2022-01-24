@@ -1,6 +1,6 @@
 extends Area2D
 
-export var nextScene : String
+export(PackedScene) var nextScene
 
-func _on_PortalOut_area_entered(area):
-	get_tree().change_scene(nextScene)
+func _on_PortalOut_body_entered(body):
+	get_tree().change_scene_to(nextScene)

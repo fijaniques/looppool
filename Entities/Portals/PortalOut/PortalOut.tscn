@@ -7,7 +7,7 @@
 extents = Vector2( 32, 32 )
 
 [node name="PortalOut" type="Area2D"]
-collision_layer = 4
+collision_layer = 0
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -16,8 +16,8 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 centered = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2( 32, 32 )
 shape = SubResource( 1 )
 
-[connection signal="area_entered" from="." to="." method="_on_PortalOut_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_PortalOut_body_entered"]

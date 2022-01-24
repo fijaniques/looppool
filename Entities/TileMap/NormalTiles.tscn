@@ -32,4 +32,5 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 modulate = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
+collision_layer = 0
 format = 1
